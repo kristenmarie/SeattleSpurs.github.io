@@ -16,6 +16,22 @@ $descriptionColor: rgba(255,255,255,0.50);
 $white: #fff;
 $aboutFont: 'PT Sans', sans-serif;
 
+// Mixins
+%container-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: $aboutFont;
+  margin-top: 3%;
+}
+
+%text-content {
+  line-height: 1.3;
+  background-color: $descriptionColor;
+  padding: 2em;
+  max-width: 600px;
+}
+
 body {
   font-family: $spursFont;
   background-color: $spursBlue;
@@ -35,7 +51,7 @@ body {
   z-index: 2;
   img {
     display: block;
-    max-height: 110%;
+    max-height: 96%;
     max-width: 100%;
     margin-top: .5em;
     margin-left: 36%;
@@ -83,26 +99,40 @@ body {
 .container {
   max-width: 100%;
   width: 100%;
-  margin-top: 3%;
 }
 
 // About
 #about {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-family: $aboutFont;
+  @extend %container-section;
 }
 
 .description {
-  line-height: 1.3;
-  background-color: $descriptionColor;
-  padding: 2em;
-  max-width: 600px;
+  @extend %text-content;
 }
 
 .group-photo {
   img {
     max-width: 600px;
   }
+}
+
+#matches {
+  @extend %container-section;
+}
+
+.map-outer {
+  text-align: right;
+  height: 500px;
+  max-width: 600px;
+}
+
+.gmap-canvas {
+  overflow: hidden;
+  background: none!important;
+  // height: 500px;
+  max-width: 600px;
+}
+
+.schedule {
+  @extend %text-content;
 }
