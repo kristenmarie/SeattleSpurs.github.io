@@ -1,0 +1,96 @@
+// Imports
+@import 'reset';
+
+// Typography
+@font-face {
+  font-family: Spurs;
+  src: url(assets/fonts/Spurs.ttf) format("truetype");
+}
+
+// Variables
+$spursBlue: #001c58;
+$spursFont: 'Spurs';
+$white: #fff;
+
+body {
+  font-family: $spursFont;
+  background-color: $spursBlue;
+  color: $white;
+}
+
+// Header 
+.header {
+  width: 100%;
+  height: 240px;
+  display: grid;
+  grid-template-rows: 200px 40px;
+}
+
+.logo {
+  grid-row: 1;
+  z-index: 2;
+  img {
+    display: block;
+    max-height: 110%;
+    max-width: 100%;
+    margin-top: .5em;
+    margin-left: 36%;
+  }
+  
+}
+
+// Nav Bar
+.nav {
+  grid-row: 2;
+  background-color: rgba(255,255,255,0.95);
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    li {
+      a {
+        display: block;
+        margin-top: .8em;
+        z-index: 6;
+        text-decoration: none;
+        color: $spursBlue;
+      }
+      a:hover {
+        color: darken($spursBlue, 10%);
+        cursor: pointer;
+      }      
+    }
+  }
+}
+
+// Social Icons
+.social {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  a {
+    img {
+      height: 36px;
+    }
+  }
+}
+
+// Container
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin-top: 3%;
+}
+
+// About
+#about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.group-photo {
+  img {
+    max-width: 600px;
+  }
+}
