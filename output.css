@@ -170,7 +170,8 @@ body {
 
 .schedule {
   grid-column: 4/5;
-  grid-row: 6/7; }
+  grid-row: 6/7;
+  min-height: 415px; }
   .schedule iframe {
     min-height: 100%;
     min-width: 100%; }
