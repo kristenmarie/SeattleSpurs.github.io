@@ -6,24 +6,14 @@ var userFeed = new Instafeed({
 });
 userFeed.run();
 
-// Stick nav on scroll
-// When the user scrolls the page, execute myFunction 
-function sticky() {
-  // Get the navbar
-  let navbar = document.querySelector("#nav");
-  // Get the offset position of the navbar
-  const offSet =  200;
-
-  window.onscroll = function() {stickIt(offSet, navbar)};
-}
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function stickIt(sticky, nav) {
-  if (window.pageYOffset >= sticky) {
+function navStick() {
+  const navOffset = 200;
+  const nav = document.querySelector("#nav");
+  if (window.pageYOffset >= navOffset) {
     nav.classList.add("sticky")
   } else {
     nav.classList.remove("sticky");
   }
 }
 
-document.addEventListener('scroll', sticky);
+document.addEventListener('scroll', navStick);
