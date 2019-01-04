@@ -16,8 +16,15 @@ $descriptionColor: rgba(255,255,255,0.12);
 $white: #fff;
 $aboutFont: 'PT Sans', sans-serif;
 
-// Mixins
+// Media Query Variables
+$shortRowsshortTwitter: "only screen and (max-width : 1430px)";
+$sideAndMidMargin: "only screen and (max-width : 1300px)";
+$stackWithMargin: "only screen and (max-width : 1000px)";
+$logoBreak: "only screen and (max-width : 900px)";
+$logoShrink: "only screen and (max-width : 690px)";
+$topMargins: "only screen and (max-width : 665px)";
 
+// Mixins
 %text-content {
   line-height: 1.3;
   background-color: $descriptionColor;
@@ -26,8 +33,7 @@ $aboutFont: 'PT Sans', sans-serif;
   }
 }
 
-//Style the body with Grid
-
+// Style the body with Grid
 body {
   font-family: $spursFont;
   background-color: $spursBlue;
@@ -37,7 +43,7 @@ body {
   min-width: 100%;
   display: grid;
   grid-template-columns: 10% 38% 4% 38% 10%;
-  grid-template-rows: 200px 40px 5em 1fr 5em 1fr 5em 1fr 2em 1fr 2em 40px;
+  grid-template-rows: 200px 40px 5em auto 5em auto 5em auto 2em auto 2em 40px;
 }
 
 // Header 
@@ -54,7 +60,7 @@ body {
   flex-direction: row;
   justify-content: center;
   //Remove this at breakpoint (somewhere around iPad
-  margin-left: 25%;
+  margin-left: 17%;
   img {
     display: block;
     height: 200px;
@@ -101,7 +107,7 @@ body {
 }
 
 // Social Icons
-.social {
+.social-top {
  position: absolute;
  top: 0;
  right: 0;
@@ -115,16 +121,14 @@ body {
   }
 }
 
-// .container {
-//   justify-content: center;
-//   max-width: 100%;
-//   margin: 3% 12% 13em 12%;
-//   display: grid;
-//   grid-template-columns: 50% 50%;
-//   grid-template-rows: repeat(10, auto);
-//   grid-column-gap: 4.3%;
-//   grid-row-gap: 2.5%;
-// }
+.social-bottom {
+  display: none;
+  grid-row: 9/10;
+  grid-column: 2/3;
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 // About
 #about {
@@ -160,8 +164,11 @@ body {
 .map-outer {
   text-align: right;
   min-height: 415px;
- //height: 500px;
-  //max-width: 600px;
+}
+
+.google-map {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .iframe {
@@ -180,8 +187,12 @@ body {
   grid-column: 4/5;
   grid-row: 6/7;
   @extend %text-content;
-}
 
+  iframe {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
 
 #gallery {
   grid-row: 8/9; 
@@ -210,14 +221,12 @@ body {
   grid-row: 10/11;
   grid-column: 2/5;
   max-width: 100%;
-  margin: auto;
-  // margin-bottom: 3%;
-  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
   max-height: 500px;
   overflow-y: scroll;
 }
-
-
 
 .foot-wrapper {
   width: 100%;
@@ -235,4 +244,127 @@ body {
   bottom: 0;
   width: 100%;
   left: 0;
+}
+
+//Media Queries
+@media #{$shortRowsshortTwitter} {
+  body {
+    grid-template-columns: 10% 40% 1% 40% 10%;
+    grid-template-rows: 200px 40px 2em auto 2em auto 2em auto 2em auto 2em 40px;
+  } 
+  .twitter-feed {
+    max-height: 400px;
+  }
+}
+
+@media #{$sideAndMidMargin} {
+  body {
+    grid-template-columns: 3% 47% 1% 47% 3%;
+  }
+}
+
+@media #{$stackWithMargin} {
+  body {
+    grid-template-columns: 2% 96% 2%;
+    grid-template-rows: 200px 40px 2em .5fr 2em .5fr 2em .5fr 2em .5fr 2em .5fr 2em .5fr 40px;
+  }
+
+  .header {
+    grid-column: 1/4;
+  }
+
+  .footer-wrap {
+    grid-column: 1/4;
+  }
+
+  #about {
+    grid-row: 6/7;
+    grid-column: 2/3;
+  }
+
+  .group-photo {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+
+  #matches {
+    grid-row: 8/9;
+    grid-column: 2/3;
+  }
+
+  .schedule {
+    grid-column: 2/3;
+    grid-row: 10/11;
+  }
+
+  #gallery {
+    grid-row: 12/13;
+    grid-column: 2/3;
+  }
+
+  .twitter-feed {
+    grid-row: 14/15;
+    grid-column: 2/3;
+  }
+}
+
+@media #{$logoBreak} {
+  .logo {
+    margin-left: 0;
+  }
+}
+
+@media #{$logoShrink} {
+
+}
+
+@media #{$topMargins} {
+  body {
+    grid-template-columns: 1% 98% 1%;
+    grid-template-rows: 200px 40px auto auto auto auto auto auto auto 40px;
+  }
+
+  .group-photo {
+    justify-content: unset;
+    margin-top: 1%;
+    grid-row: 3/4;
+    img {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  #about {
+    grid-row: 4/5;
+    margin-top: 1%;
+  }
+
+  #matches {
+    grid-row: 5/6;
+    margin-top: 1%;
+  }
+
+  .schedule {
+    grid-row: 6/7;
+    margin-top: 1%;
+  }
+
+  #gallery {
+    grid-row: 7/8;
+    margin-top: 1%;
+  }
+
+  .twitter-feed {
+    grid-row: 8/9;
+    margin-top: 1%;
+  }
+
+  .social-top {
+    display: none;
+  }
+
+  .social-bottom {
+    display: block;
+  }
+
 }
