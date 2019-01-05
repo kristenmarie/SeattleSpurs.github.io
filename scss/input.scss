@@ -67,7 +67,9 @@ body {
     height: 200px;
     max-width: 100%;
   }
-  
+  img:nth-child(2) {
+    display: none;
+  }
 }
 
 // Nav Bar
@@ -317,7 +319,16 @@ body {
 }
 
 @media #{$logoShrink} {
-
+  .logo {
+    img:nth-child(1) {
+      display: none;
+    }
+    img:nth-child(2) {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 @media #{$topMargins} {
