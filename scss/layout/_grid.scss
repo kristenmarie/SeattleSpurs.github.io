@@ -7,8 +7,8 @@ body {
   min-width: 100%;
   display: grid;
   display: -ms-grid;
-  grid-template-columns: 10% 38% 4% 38% 10%;
-  grid-template-rows: 200px 40px 5em auto 5em auto 5em auto 2em auto 2em 40px;
+  grid-template-columns: 17% 33% 2vh 33% 17%;
+  grid-template-rows: 200px 40px 2vh auto 2vh auto 2vh auto 2vh auto 2vh 40px;
 
   @include for-big-desktop-smaller {
     grid-template-columns: 10% 40% 1% 40% 10%;
