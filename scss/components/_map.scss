@@ -1,0 +1,25 @@
+#matches {
+  grid-row: 6/7;
+  grid-column: 2/3;
+  min-height: 415px;  
+}
+
+.map-outer {
+  text-align: right;
+  min-height: 415px;
+}
+
+.google-map {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.iframe {
+  min-height: 415px;
+  width: 100%;
+}
+
+.gmap-canvas {
+  overflow: hidden;
+  background: none!important;
+}

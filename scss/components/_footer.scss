@@ -1,0 +1,17 @@
+.foot-wrapper {
+  width: 100%;
+  grid-row: -1;
+  grid-column: 1/6;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: $navBarColor;
+  color: $spursBlue;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}

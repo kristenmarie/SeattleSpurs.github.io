@@ -1,0 +1,22 @@
+#gallery {
+  grid-row: 8/9; 
+  grid-column: 2/5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#instafeed {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  a {
+    margin: 0.5%;
+    img {
+      margin-right: 1%;
+      margin-bottom: 1%;
+    }
+  }
+}

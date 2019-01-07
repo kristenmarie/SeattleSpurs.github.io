@@ -1,0 +1,11 @@
+.twitter-feed {
+  grid-row: 10/11;
+  grid-column: 2/5;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  max-height: 500px;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}

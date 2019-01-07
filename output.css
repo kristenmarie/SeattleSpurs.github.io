@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=PT+Sans");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,13 +52,6 @@ img {
 @font-face {
   font-family: Spurs;
   src: url(assets/fonts/Spurs.ttf) format("truetype"); }
-#about, .description, .schedule {
-  line-height: 1.3;
-  background-color: rgba(255, 255, 255, 0.12);
-  font-family: "PT Sans", sans-serif; }
-  #about p, .description p, .schedule p {
-    padding: 2em; }
-
 body {
   font-family: "Spurs";
   background-color: #001c58;
@@ -70,6 +63,35 @@ body {
   display: -ms-grid;
   grid-template-columns: 10% 38% 4% 38% 10%;
   grid-template-rows: 200px 40px 5em auto 5em auto 5em auto 2em auto 2em 40px; }
+
+.foot-wrapper {
+  width: 100%;
+  grid-row: -1;
+  grid-column: 1/6; }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #001c58;
+  bottom: 0;
+  width: 100%;
+  left: 0; }
+
+.description {
+  line-height: 1.3;
+  background-color: rgba(255, 255, 255, 0.12);
+  font-family: "PT Sans", sans-serif; }
+  .description p {
+    padding: 2em; }
+
+#about {
+  grid-row: 4/5;
+  grid-column: 2/3;
+  min-width: 100%;
+  max-width: 100%; }
 
 .header {
   width: 100%;
@@ -117,38 +139,24 @@ body {
 .sticky + .container {
   padding-top: 60px; }
 
-.social-top {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 1em;
-  margin-top: .5em; }
-  .social-top a img {
-    height: 36px; }
-
-.social-bottom {
-  display: none;
-  grid-row: 9/10;
-  grid-column: 2/3;
-  margin-top: 7%;
-  margin-left: auto;
-  margin-right: auto; }
-
-#about {
-  grid-row: 4/5;
-  grid-column: 2/3;
-  min-width: 100%;
-  max-width: 100%; }
-
-.group-photo {
-  grid-column: 4/5;
-  grid-row: 4/5;
+#gallery {
+  grid-row: 8/9;
+  grid-column: 2/5;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center; }
-  .group-photo img {
-    margin-top: auto;
-    margin-bottom: auto; }
+
+#instafeed {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center; }
+  #instafeed a {
+    margin: 0.5%; }
+    #instafeed a img {
+      margin-right: 1%;
+      margin-bottom: 1%; }
 
 #matches {
   grid-row: 6/7;
@@ -179,24 +187,22 @@ body {
     min-height: 100%;
     min-width: 100%; }
 
-#gallery {
-  grid-row: 8/9;
-  grid-column: 2/5;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
+.social-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 1em;
+  margin-top: .5em; }
+  .social-top a img {
+    height: 36px; }
 
-#instafeed {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  justify-content: center; }
-  #instafeed a {
-    margin: 0.5%; }
-    #instafeed a img {
-      margin-right: 1%;
-      margin-bottom: 1%; }
+.social-bottom {
+  display: none;
+  grid-row: 9/10;
+  grid-column: 2/3;
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto; }
 
 .twitter-feed {
   grid-row: 10/11;
@@ -206,26 +212,18 @@ body {
   margin-right: auto;
   width: 300px;
   max-height: 500px;
-  overflow-y: scroll; }
+  -webkit-overflow-scrolling: touch;
+  overflow: auto; }
 
-.twitter-timeline {
-  -webkit-overflow-scrolling: touch; }
-
-.foot-wrapper {
-  width: 100%;
-  grid-row: -1;
-  grid-column: 1/6; }
-
-.footer {
+.group-photo {
+  grid-column: 4/5;
+  grid-row: 4/5;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #001c58;
-  bottom: 0;
-  width: 100%;
-  left: 0; }
+  flex-direction: column;
+  justify-content: center; }
+  .group-photo img {
+    margin-top: auto;
+    margin-bottom: auto; }
 
 @media only screen and (max-width: 1430px) {
   body {

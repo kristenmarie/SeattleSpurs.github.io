@@ -1,0 +1,12 @@
+body {
+  font-family: $spursFont;
+  background-color: $spursBlue;
+  color: $white;
+  height: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 10% 38% 4% 38% 10%;
+  grid-template-rows: 200px 40px 5em auto 5em auto 5em auto 2em auto 2em 40px;
+}
