@@ -8,4 +8,18 @@
     margin-top: auto;
     margin-bottom: auto;
   }
+  @include for-tablet-landscape-smaller {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+
+  @include for-phone-portrait-smaller {
+    justify-content: unset;
+    margin-top: 1%;
+    grid-row: 3/4;
+    img {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
 }

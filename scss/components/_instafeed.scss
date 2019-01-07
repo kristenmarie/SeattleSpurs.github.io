@@ -5,6 +5,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include for-tablet-landscape-smaller {
+    grid-row: 12/13;
+    grid-column: 2/3;
+  }
+
+  @include for-phone-portrait-smaller {
+    grid-row: 7/8;
+    margin-top: 1%;
+  }
 }
 
 #instafeed {

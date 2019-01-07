@@ -10,6 +10,10 @@
       height: 36px;
     }
   }
+
+  @include for-phone-portrait-smaller {
+    display: none;
+  }
 }
 
 .social-bottom {
@@ -19,4 +23,8 @@
   margin-top: 7%;
   margin-left: auto;
   margin-right: auto;
+
+  @include for-phone-portrait-smaller {
+    display: block;
+  }
 }

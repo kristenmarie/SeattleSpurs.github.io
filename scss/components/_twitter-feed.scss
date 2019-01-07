@@ -8,4 +8,18 @@
   max-height: 500px;
   -webkit-overflow-scrolling: touch;
   overflow: auto;
+
+  @include for-big-desktop-smaller {
+    max-height: 400px;
+  }
+
+  @include for-tablet-landscape-smaller {
+    grid-row: 14/15;
+    grid-column: 2/3;
+  }
+
+  @include for-phone-portrait-smaller {
+    grid-row: 8/9;
+    margin-top: 1%;
+  }
 }

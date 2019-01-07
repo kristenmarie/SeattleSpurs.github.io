@@ -2,6 +2,9 @@
   width: 100%;
   grid-row: -1;
   grid-column: 1/6;
+  @include for-tablet-landscape-smaller {
+    grid-column: 1/4;
+  }
 }
 
 .footer {

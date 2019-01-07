@@ -9,4 +9,24 @@ body {
   display: -ms-grid;
   grid-template-columns: 10% 38% 4% 38% 10%;
   grid-template-rows: 200px 40px 5em auto 5em auto 5em auto 2em auto 2em 40px;
+
+  @include for-big-desktop-smaller {
+    grid-template-columns: 10% 40% 1% 40% 10%;
+    grid-template-rows: 200px 40px 2em auto 2em auto 2em auto 2em auto 2em 40px;
+  }
+
+  @include for-desktop-smaller {
+    grid-template-columns: 3% 47% 1% 47% 3%;
+  }
+
+  @include for-tablet-landscape-smaller {
+    grid-template-columns: 2% 96% 2%;
+    grid-template-rows: 200px 40px 2em .5fr 2em .5fr 2em .5fr 2em .5fr 2em .5fr 2em .5fr 40px;
+  }
+
+  @include for-phone-portrait-smaller {
+    grid-template-columns: 1% 98% 1%;
+    grid-template-rows: 200px 40px auto auto auto auto auto auto auto 40px;
+  }
 }
+

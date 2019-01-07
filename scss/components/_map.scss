@@ -2,6 +2,16 @@
   grid-row: 6/7;
   grid-column: 2/3;
   min-height: 415px;  
+  
+  @include for-tablet-landscape-smaller {
+    grid-row: 8/9;
+    grid-column: 2/3;
+  }
+
+  @include for-phone-portrait-smaller {
+    grid-row: 5/6;
+    margin-top: 1%;
+  }
 }
 
 .map-outer {

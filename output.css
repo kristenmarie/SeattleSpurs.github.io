@@ -63,11 +63,29 @@ body {
   display: -ms-grid;
   grid-template-columns: 10% 38% 4% 38% 10%;
   grid-template-rows: 200px 40px 5em auto 5em auto 5em auto 2em auto 2em 40px; }
+  @media (max-width: 1430px) {
+    body {
+      grid-template-columns: 10% 40% 1% 40% 10%;
+      grid-template-rows: 200px 40px 2em auto 2em auto 2em auto 2em auto 2em 40px; } }
+  @media (max-width: 1300px) {
+    body {
+      grid-template-columns: 3% 47% 1% 47% 3%; } }
+  @media (max-width: 1000px) {
+    body {
+      grid-template-columns: 2% 96% 2%;
+      grid-template-rows: 200px 40px 2em .5fr 2em .5fr 2em .5fr 2em .5fr 2em .5fr 2em .5fr 40px; } }
+  @media (max-width: 665px) {
+    body {
+      grid-template-columns: 1% 98% 1%;
+      grid-template-rows: 200px 40px auto auto auto auto auto auto auto 40px; } }
 
 .foot-wrapper {
   width: 100%;
   grid-row: -1;
   grid-column: 1/6; }
+  @media (max-width: 1000px) {
+    .foot-wrapper {
+      grid-column: 1/4; } }
 
 .footer {
   display: flex;
@@ -92,11 +110,25 @@ body {
   grid-column: 2/3;
   min-width: 100%;
   max-width: 100%; }
+  @media (max-width: 1000px) {
+    #about {
+      grid-row: 6/7;
+      grid-column: 2/3; } }
+  @media (max-width: 665px) {
+    #about {
+      grid-row: 4/5;
+      margin-top: 1%; } }
 
 .header {
   width: 100%;
   grid-column: 1/6;
   max-height: 240px; }
+  @media (max-width: 1000px) {
+    .header {
+      grid-column: 1/4; } }
+  @media (max-width: 900px) {
+    .header .logo {
+      margin-left: 0; } }
 
 .logo {
   grid-row: 1;
@@ -109,8 +141,19 @@ body {
     display: block;
     height: 200px;
     max-width: 100%; }
+  @media (max-width: 690px) {
+    .logo img:nth-child(1) {
+      display: none; } }
   .logo img:nth-child(2) {
     display: none; }
+    @media (max-width: 690px) {
+      .logo img:nth-child(2) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto; } }
+  @media (max-width: 900px) {
+    .logo {
+      margin-left: 0; } }
 
 .nav {
   grid-row: 2;
@@ -146,6 +189,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+  @media (max-width: 1000px) {
+    #gallery {
+      grid-row: 12/13;
+      grid-column: 2/3; } }
+  @media (max-width: 665px) {
+    #gallery {
+      grid-row: 7/8;
+      margin-top: 1%; } }
 
 #instafeed {
   display: flex;
@@ -162,6 +213,14 @@ body {
   grid-row: 6/7;
   grid-column: 2/3;
   min-height: 415px; }
+  @media (max-width: 1000px) {
+    #matches {
+      grid-row: 8/9;
+      grid-column: 2/3; } }
+  @media (max-width: 665px) {
+    #matches {
+      grid-row: 5/6;
+      margin-top: 1%; } }
 
 .map-outer {
   text-align: right;
@@ -186,6 +245,14 @@ body {
   .schedule iframe {
     min-height: 100%;
     min-width: 100%; }
+  @media (max-width: 1000px) {
+    .schedule {
+      grid-column: 2/3;
+      grid-row: 10/11; } }
+  @media (max-width: 665px) {
+    .schedule {
+      grid-row: 6/7;
+      margin-top: 1%; } }
 
 .social-top {
   position: absolute;
@@ -195,6 +262,9 @@ body {
   margin-top: .5em; }
   .social-top a img {
     height: 36px; }
+  @media (max-width: 665px) {
+    .social-top {
+      display: none; } }
 
 .social-bottom {
   display: none;
@@ -203,6 +273,9 @@ body {
   margin-top: 7%;
   margin-left: auto;
   margin-right: auto; }
+  @media (max-width: 665px) {
+    .social-bottom {
+      display: block; } }
 
 .twitter-feed {
   grid-row: 10/11;
@@ -214,6 +287,17 @@ body {
   max-height: 500px;
   -webkit-overflow-scrolling: touch;
   overflow: auto; }
+  @media (max-width: 1430px) {
+    .twitter-feed {
+      max-height: 400px; } }
+  @media (max-width: 1000px) {
+    .twitter-feed {
+      grid-row: 14/15;
+      grid-column: 2/3; } }
+  @media (max-width: 665px) {
+    .twitter-feed {
+      grid-row: 8/9;
+      margin-top: 1%; } }
 
 .group-photo {
   grid-column: 4/5;
@@ -224,98 +308,17 @@ body {
   .group-photo img {
     margin-top: auto;
     margin-bottom: auto; }
-
-@media only screen and (max-width: 1430px) {
-  body {
-    grid-template-columns: 10% 40% 1% 40% 10%;
-    grid-template-rows: 200px 40px 2em auto 2em auto 2em auto 2em auto 2em 40px; }
-
-  .twitter-feed {
-    max-height: 400px; } }
-@media only screen and (max-width: 1300px) {
-  body {
-    grid-template-columns: 3% 47% 1% 47% 3%; } }
-@media only screen and (max-width: 1000px) {
-  body {
-    grid-template-columns: 2% 96% 2%;
-    grid-template-rows: 200px 40px 2em .5fr 2em .5fr 2em .5fr 2em .5fr 2em .5fr 2em .5fr 40px; }
-
-  .header {
-    grid-column: 1/4; }
-
-  .footer-wrap {
-    grid-column: 1/4; }
-
-  #about {
-    grid-row: 6/7;
-    grid-column: 2/3; }
-
-  .group-photo {
-    grid-column: 2/3;
-    grid-row: 4/5; }
-
-  #matches {
-    grid-row: 8/9;
-    grid-column: 2/3; }
-
-  .schedule {
-    grid-column: 2/3;
-    grid-row: 10/11; }
-
-  #gallery {
-    grid-row: 12/13;
-    grid-column: 2/3; }
-
-  .twitter-feed {
-    grid-row: 14/15;
-    grid-column: 2/3; } }
-@media only screen and (max-width: 900px) {
-  .logo {
-    margin-left: 0; } }
-@media only screen and (max-width: 690px) {
-  .logo img:nth-child(1) {
-    display: none; }
-  .logo img:nth-child(2) {
-    display: block;
-    margin-left: auto;
-    margin-right: auto; } }
-@media only screen and (max-width: 665px) {
-  body {
-    grid-template-columns: 1% 98% 1%;
-    grid-template-rows: 200px 40px auto auto auto auto auto auto auto 40px; }
-
-  .group-photo {
-    justify-content: unset;
-    margin-top: 1%;
-    grid-row: 3/4; }
-    .group-photo img {
-      margin-top: 0;
-      margin-bottom: 0; }
-
-  #about {
-    grid-row: 4/5;
-    margin-top: 1%; }
-
-  #matches {
-    grid-row: 5/6;
-    margin-top: 1%; }
-
-  .schedule {
-    grid-row: 6/7;
-    margin-top: 1%; }
-
-  #gallery {
-    grid-row: 7/8;
-    margin-top: 1%; }
-
-  .twitter-feed {
-    grid-row: 8/9;
-    margin-top: 1%; }
-
-  .social-top {
-    display: none; }
-
-  .social-bottom {
-    display: block; } }
+  @media (max-width: 1000px) {
+    .group-photo {
+      grid-column: 2/3;
+      grid-row: 4/5; } }
+  @media (max-width: 665px) {
+    .group-photo {
+      justify-content: unset;
+      margin-top: 1%;
+      grid-row: 3/4; }
+      .group-photo img {
+        margin-top: 0;
+        margin-bottom: 0; } }
 
 /*# sourceMappingURL=output.css.map */

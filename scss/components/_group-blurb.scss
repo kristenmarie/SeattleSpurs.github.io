@@ -11,4 +11,13 @@
   grid-column: 2/3;
   min-width: 100%;
   max-width: 100%;
+  @include for-tablet-landscape-smaller {
+    grid-row: 6/7;
+    grid-column: 2/3;
+  }
+
+  @include for-phone-portrait-smaller {
+    grid-row: 4/5;
+    margin-top: 1%;
+  }
 }

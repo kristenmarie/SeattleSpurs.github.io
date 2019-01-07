@@ -2,6 +2,16 @@
   width: 100%;
   grid-column: 1/6;
   max-height: 240px;
+
+  @include for-tablet-landscape-smaller {
+    grid-column: 1/4;
+  }
+
+  @include for-tablet-smaller {
+    .logo {
+      margin-left: 0;
+    }
+  }
 }
 
 .logo {
@@ -17,8 +27,21 @@
     height: 200px;
     max-width: 100%;
   }
+  img:nth-child(1) {
+    @include for-phone-landscape-smaller {
+      display: none;
+    }
+  }
   img:nth-child(2) {
     display: none;
+    @include for-phone-landscape-smaller {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @include for-tablet-smaller {
+    margin-left: 0;
   }
 }
 
