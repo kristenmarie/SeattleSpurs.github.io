@@ -1,0 +1,77 @@
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');  
+
+module.exports = {
+  entry: "./src/index.js",
+
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+
+  devtool: 'eval-source-map',
+  devServer: {
+    contentBase: './dist'
+  },
+
+  module: {
+
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.(gif|png|jpe?g)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/'
+            }
+          }
+        ]
+      },
+      
+      {
+        test:/\.html$/,
+        use: [
+          'html-loader'
+        ]
+      },
+      {
+        test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/fonts/'
+          }
+        }]
+      }
+    ]
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: './src/index.html',
+      filename: 'index.html',
+      favicon: './src/assets/images/spurs-favicon.png',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    }),
+
+    new UglifyJsPlugin(),
+    new CleanWebpackPlugin(['dist']),
+  ]
+};
