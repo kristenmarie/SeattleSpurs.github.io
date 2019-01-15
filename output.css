@@ -1,4 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans");
+/* Pop */
+@-webkit-keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
+@keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
+.hvr-pop {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0); }
+
+.hvr-pop:hover, .hvr-pop:focus, .hvr-pop:active {
+  -webkit-animation-name: hvr-pop;
+  animation-name: hvr-pop;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1; }
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -165,13 +191,13 @@ body {
     align-items: center;
     margin-left: 17%;
     margin-right: 17%; }
-    .nav ul li a {
+    .nav ul li p, .nav ul li a {
       display: block;
       margin-top: .8em;
       z-index: 6;
       text-decoration: none;
       color: #001c58; }
-    .nav ul li a:hover {
+    .nav ul li p:hover, .nav ul li a:hover {
       color: #000c25;
       cursor: pointer; }
     @media (max-width: 690px) {

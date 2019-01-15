@@ -58,14 +58,14 @@
     margin-left: 17%;
     margin-right: 17%;
     li {
-      a {
+      p, a {
         display: block;
         margin-top: .8em;
         z-index: 6;
         text-decoration: none;
         color: $spursBlue;
       }
-      a:hover {
+      p:hover, a:hover {
         color: darken($spursBlue, 10%);
         cursor: pointer;
       }      
