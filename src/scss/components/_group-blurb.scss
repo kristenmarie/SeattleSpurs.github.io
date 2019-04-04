@@ -1,9 +1,11 @@
 .description {
-  line-height: 1.3;
+  line-height: 1.7;
   background-color: $descriptionColor;
-  font-family: $aboutFont;  p {
+  font-family: $aboutFont;  
+  p {
     padding: 2em;
   }
+  font-size: 1.5em;
 }
 
 #about {

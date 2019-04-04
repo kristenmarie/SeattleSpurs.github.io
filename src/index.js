@@ -1,15 +1,15 @@
 import '../src/scss/styles.scss';
 import '../src/assets/images/spurs-favicon.png';
-import '../src/scripts/instafeed.min.js';
-let Instafeed = require("instafeed");
+// import '../src/scripts/instafeed.min.js';
+// let Instafeed = require("instafeed");
 
 // Instagram feed
-var userFeed = new Instafeed({
-  get: 'user',
-  clientId: 6917635878,
-  accessToken: '6917635878.1677ed0.f7f3b63faeeb4689af3c54d0c4301f2d'
-});
-userFeed.run();
+// var userFeed = new Instafeed({
+//   get: 'user',
+//   clientId: 6917635878,
+//   accessToken: '6917635878.1677ed0.f7f3b63faeeb4689af3c54d0c4301f2d'
+// });
+// userFeed.run();
 
 function navStick() {
   const navOffset = 200;
